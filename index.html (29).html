@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadPoint — Leads 100% Portuguesas, Entrega Imediata</title>
+<meta name="description" content="Leads qualificadas de seguro de saúde geradas por anúncios no Facebook e Instagram. 100% portuguesas, entrega imediata após pagamento, conformidade RGPD.">
+<meta property="og:title" content="LeadPoint — Leads 100% Portuguesas, Entrega Imediata">
+<meta property="og:description" content="Leads qualificadas de seguro de saúde geradas por anúncios no Facebook e Instagram. 100% portuguesas, entrega imediata após pagamento, conformidade RGPD.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeadPoint — Leads 100% Portuguesas, Entrega Imediata">
+<meta name="twitter:description" content="Leads qualificadas de seguro de saúde geradas por anúncios no Facebook e Instagram. 100% portuguesas, entrega imediata após pagamento, conformidade RGPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --blue-faint: rgba(37,99,235,0.06);
+    --blue-border: rgba(37,99,235,0.15);
+    --dark: #0f1c2e;
+    --muted: rgba(15,28,46,0.52);
+    --muted-light: rgba(15,28,46,0.32);
+    --bg: #ffffff;
+    --bg-alt: #f2f5fb;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--dark);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* CONTAINER */
+  .w {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    width: 100%;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--blue-border);
+  }
+  .nav-w {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; }
+  .logo span { color: var(--dark); font-weight: 600; }
+  .nav-btn { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #fff; background: var(--blue); padding: 0.5rem 1.1rem; text-decoration: none; border-radius: 4px; transition: background 0.2s; }
+  .nav-btn:hover { background: #1d4ed8; }
+
+  /* HERO */
+  .hero { padding: 4.8rem 0 1.8rem; background: var(--bg); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 55vw; height: 100%; background: radial-gradient(ellipse at top right, rgba(37,99,235,0.05) 0%, transparent 65%); pointer-events: none; }
+
+  .badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem; }
+  .badge::before { content: ''; display: block; width: 1.4rem; height: 2px; background: var(--blue); border-radius: 2px; }
+
+  h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--dark); }
+  h1 em { font-style: normal; color: var(--blue); }
+
+  .hero-sub { font-size: 0.92rem; color: var(--muted); max-width: 50ch; line-height: 1.72; margin-bottom: 1.2rem; }
+
+  .hero-btns { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+  .btn-blue { display: inline-block; background: var(--blue); color: #fff; padding: 0.7rem 1.6rem; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all 0.2s; }
+  .btn-blue:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 5px 18px rgba(37,99,235,0.22); }
+  .btn-outline { display: inline-block; color: var(--dark); padding: 0.7rem 1.6rem; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; text-decoration: none; border: 1.5px solid var(--blue-border); border-radius: 4px; transition: all 0.2s; }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+  .stats { display: flex; gap: 1.8rem; padding-top: 1rem; border-top: 1px solid var(--blue-border); flex-wrap: wrap; }
+  .stat-val { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--blue); line-height: 1; }
+  .stat-lbl { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.15rem; font-weight: 500; }
+
+  /* SECTIONS */
+  .sec { padding: 2rem 0; }
+  .sec-alt { background: var(--bg-alt); padding: 2rem 0; }
+
+  .sec-badge { font-size: 0.63rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
+  .sec-badge::before { content: ''; display: block; width: 1rem; height: 2px; background: var(--blue); border-radius: 2px; }
+  h2 { font-family: 'Outfit', sans-serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: var(--dark); }
+  h2 em { font-style: normal; color: var(--blue); }
+
+  /* WHY GRID */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; align-items: start; }
+  .features { display: flex; flex-direction: column; gap: 0.9rem; }
+  .feat { display: flex; gap: 0.8rem; align-items: flex-start; }
+  .feat-icon { width: 2rem; height: 2rem; min-width: 2rem; border: 1.5px solid var(--blue-border); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; background: var(--blue-faint); }
+  .feat h4 { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.15rem; color: var(--dark); }
+  .feat p { font-size: 0.75rem; color: var(--muted); line-height: 1.6; }
+
+  .lead-card { border: 1.5px solid var(--blue-border); border-radius: 7px; padding: 1rem; background: #fff; box-shadow: 0 2px 12px rgba(37,99,235,0.05); }
+  .lead-card h3 { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.7rem; color: var(--blue); }
+  .lead-ex { background: var(--bg-alt); border: 1px solid var(--blue-border); border-radius: 5px; padding: 0.6rem 0.8rem; margin-bottom: 0.5rem; }
+  .lead-row { display: flex; justify-content: space-between; margin-bottom: 0.2rem; font-size: 0.72rem; }
+  .lead-row span:first-child { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+  .lead-row span:last-child { font-weight: 600; color: var(--dark); }
+  .lead-tag { display: inline-block; background: rgba(37,99,235,0.1); color: var(--blue); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 3px; margin-top: 0.3rem; }
+  .lead-note { font-size: 0.64rem; color: var(--muted-light); margin-top: 0.6rem; line-height: 1.5; }
+
+  /* SECTORS */
+  .intro-text { font-size: 0.85rem; color: var(--muted); max-width: 52ch; line-height: 1.72; margin-bottom: 0.9rem; }
+  .sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+  .sec-card { border: 1.5px solid var(--blue-border); border-radius: 6px; padding: 0.8rem; background: var(--blue-faint); transition: border-color 0.2s; }
+  .sec-card:hover { border-color: var(--blue); }
+  .sec-card .ico { font-size: 1.1rem; margin-bottom: 0.35rem; }
+  .sec-card h4 { font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; margin-bottom: 0.2rem; color: var(--dark); }
+  .sec-card p { font-size: 0.7rem; color: var(--muted); line-height: 1.5; }
+
+  /* PRICING */
+  .packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 0.9rem; align-items: start; }
+  .pack { border: 1.5px solid var(--blue-border); border-radius: 7px; padding: 1.1rem 0.9rem; position: relative; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; }
+  .pack:hover { border-color: var(--blue); }
+  .pack.on { border-color: var(--blue); box-shadow: 0 5px 20px rgba(37,99,235,0.1); }
+  .pack.off { opacity: 0.4; pointer-events: none; background: var(--bg-alt); }
+  .pk-badge { position: absolute; top: -0.7rem; left: 0.9rem; background: var(--blue); color: #fff; font-size: 0.57rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; }
+  .pk-badge.grey { background: #94a3b8; }
+  .pk-name { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.55rem; }
+  .pk-leads { font-family: 'Outfit', sans-serif; font-size: 1.9rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--dark); }
+  .pk-sub { font-size: 0.6rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.55rem; margin-top: 0.1rem; }
+  .pk-divider { height: 1px; background: var(--blue-border); margin: 0.55rem 0; }
+  .pk-ppl { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.15rem; }
+  .pk-total { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; color: var(--dark); }
+  .pk-total-lbl { font-size: 0.6rem; color: var(--muted-light); margin-bottom: 0.8rem; }
+  .pk-feats { list-style: none; margin-bottom: 0.8rem; display: flex; flex-direction: column; gap: 0.3rem; }
+  .pk-feats li { font-size: 0.71rem; color: var(--muted); display: flex; align-items: center; gap: 0.45rem; }
+  .pk-feats li::before { content: '✓'; color: var(--blue); font-size: 0.65rem; font-weight: 700; flex-shrink: 0; }
+  .btn-pk { display: block; text-align: center; text-decoration: none; padding: 0.65rem; font-family: 'Outfit', sans-serif; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+  .btn-pk.buy { background: var(--blue); color: #fff; }
+  .btn-pk.buy:hover { background: #1d4ed8; }
+  .btn-pk.dis { border: 1.5px solid #e2e8f0; color: #94a3b8; background: #f8fafc; cursor: default; }
+  .pk-note { font-size: 0.7rem; color: var(--muted-light); margin-top: 0.7rem; line-height: 1.6; }
+  .pk-note a { color: var(--blue); text-decoration: none; font-weight: 500; }
+
+  /* FAQ */
+  .faq-list { margin-top: 0.8rem; }
+  .faq-item { border-bottom: 1px solid var(--blue-border); }
+  .faq-q { width: 100%; background: none; border: none; color: var(--dark); font-family: 'Manrope', sans-serif; font-size: 0.85rem; font-weight: 500; text-align: left; padding: 0.75rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-q:hover { color: var(--blue); }
+  .faq-ic { color: var(--blue); font-size: 1.1rem; flex-shrink: 0; transition: transform 0.25s; line-height: 1; }
+  .faq-a { font-size: 0.78rem; color: var(--muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+  .faq-item.open .faq-a { max-height: 220px; padding-bottom: 0.8rem; }
+  .faq-item.open .faq-ic { transform: rotate(45deg); }
+  .faq-a a { color: var(--blue); text-decoration: none; }
+
+  /* CTA */
+  .cta { padding: 2.2rem 0; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
+  .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 60vw; height: 40vh; background: radial-gradient(ellipse, rgba(37,99,235,0.18) 0%, transparent 70%); pointer-events: none; }
+  .cta h2 { color: #fff; margin-bottom: 0.5rem; position: relative; }
+  .cta h2 em { color: var(--blue-light); }
+  .cta .sub { font-size: 0.88rem; color: rgba(255,255,255,0.5); max-width: 42ch; margin: 0 auto 1.1rem; line-height: 1.7; position: relative; }
+  .cta .btn-blue { position: relative; }
+  .cta-email { margin-top: 0.8rem; font-size: 0.75rem; color: rgba(255,255,255,0.32); position: relative; }
+  .cta-email a { color: var(--blue-light); text-decoration: none; font-weight: 500; }
+
+  /* FOOTER */
+  footer { background: var(--bg); border-top: 1px solid var(--blue-border); padding: 0.9rem 0; }
+  .foot-w { max-width: 680px; margin: 0 auto; padding: 0 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; font-size: 0.68rem; color: var(--muted); }
+  footer strong { color: var(--blue); font-weight: 700; }
+  footer a { color: var(--blue); text-decoration: none; }
+  .foot-tag { font-size: 0.6rem; color: var(--blue); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* REVEAL */
+  .r { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .r.on { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .why-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .sectors { grid-template-columns: 1fr 1fr; }
+    .packs { grid-template-columns: 1fr; }
+    h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+    .hero-btns { flex-direction: column; }
+    .btn-blue, .btn-outline { text-align: center; }
+    .stats { gap: 1.2rem; }
+    .foot-w { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 380px) {
+    .sectors { grid-template-columns: 1fr; }
+    .stat-val { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-w">
+    <div class="logo">Lead<span>Point</span></div>
+    <a href="#pricing" class="nav-btn">Ver Packs</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="w">
+    <div class="badge">Leads 100% Portuguesas</div>
+    <h1>Clientes que já <em>pediram</em> contacto.</h1>
+    <p class="hero-sub">Leads qualificadas de particulares portugueses geradas através de anúncios no Facebook e Instagram. Cada contacto pediu activamente proposta de seguro de saúde. Entrega imediata após pagamento.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-blue">Escolher Pack</a>
+      <a href="#como-funciona" class="btn-outline">Como funciona</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-val">100%</div><div class="stat-lbl">Leads de Portugal</div></div>
+      <div><div class="stat-val">Imediata</div><div class="stat-lbl">Entrega após compra</div></div>
+      <div><div class="stat-val">RGPD</div><div class="stat-lbl">Conformidade total</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-alt" id="como-funciona">
+  <div class="w">
+    <div class="sec-badge">Porquê a LeadPoint</div>
+    <h2>Leads que já <em>querem</em> ser contactadas.</h2>
+    <div class="why-grid">
+      <div class="features">
+        <div class="feat r">
+          <div class="feat-icon">📣</div>
+          <div><h4>Geradas por anúncios nas redes sociais</h4><p>Campanhas no Facebook e Instagram. O utilizador viu o anúncio, clicou e preencheu o formulário — intenção real de compra.</p></div>
+        </div>
+        <div class="feat r">
+          <div class="feat-icon">✅</div>
+          <div><h4>Dados verificados e completos</h4><p>Nome, telefone, email e tipo de seguro. Toda a informação necessária para fechar desde o primeiro contacto.</p></div>
+        </div>
+        <div class="feat r">
+          <div class="feat-icon">⚡</div>
+          <div><h4>Entrega imediata após compra</h4><p>Pagamento confirmado pelo Stripe → ficheiro enviado de imediato para o seu email. Sem esperas.</p></div>
+        </div>
+        <div class="feat r">
+          <div class="feat-icon">🔒</div>
+          <div><h4>100% em conformidade com o RGPD</h4><p>Consentimento explícito e documentado em todos os contactos. Recolha e transmissão totalmente legal.</p></div>
+        </div>
+      </div>
+      <div class="lead-card r">
+        <h3>Exemplo de lead</h3>
+        <div class="lead-ex">
+          <div class="lead-row"><span>Nome</span><span>Maria S.</span></div>
+          <div class="lead-row"><span>Telefone</span><span>+351 9XX XXX XXX</span></div>
+          <div class="lead-row"><span>Origem</span><span>Facebook Ads</span></div>
+          <div class="lead-row"><span>Tipo</span><span>Seguro de Saúde</span></div>
+          <div class="lead-row"><span>Data</span><span>Recente</span></div>
+          <div class="lead-tag">✓ Consentimento RGPD</div>
+        </div>
+        <div class="lead-ex">
+          <div class="lead-row"><span>Nome</span><span>João F.</span></div>
+          <div class="lead-row"><span>Telefone</span><span>+351 9XX XXX XXX</span></div>
+          <div class="lead-row"><span>Origem</span><span>Instagram Ads</span></div>
+          <div class="lead-row"><span>Tipo</span><span>Seguro de Saúde</span></div>
+          <div class="lead-row"><span>Data</span><span>Recente</span></div>
+          <div class="lead-tag">✓ Consentimento RGPD</div>
+        </div>
+        <p class="lead-note">Dados ilustrativos. O campo distrito pode não estar preenchido em todas as leads.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="para-quem">
+  <div class="w">
+    <div class="sec-badge">Para quem são estas leads</div>
+    <h2>Qualquer profissional que venda por <em>telefone ou digital.</em></h2>
+    <p class="intro-text">O comportamento de compra mudou — o cliente decide hoje pelo telemóvel. Estas leads encaixam em qualquer operação que trabalhe à distância ou no terreno.</p>
+    <div class="sectors">
+      <div class="sec-card r"><div class="ico">🏥</div><h4>Mediadores de Seguros</h4><p>Leads com pedido activo de proposta de seguro de saúde, vida e outros ramos.</p></div>
+      <div class="sec-card r"><div class="ico">⚡</div><h4>Mercado Energético</h4><p>Público receptivo a propostas de poupança em energia contactado por telefone.</p></div>
+      <div class="sec-card r"><div class="ico">💳</div><h4>Crédito e Financiamento</h4><p>Intermediários de crédito com soluções complementares para este perfil.</p></div>
+      <div class="sec-card r"><div class="ico">📡</div><h4>Telecomunicações</h4><p>Equipas de vendas de operadoras que trabalham por telefone ou digital.</p></div>
+      <div class="sec-card r"><div class="ico">🏨</div><h4>Saúde Privada &amp; Clínicas</h4><p>Público com interesse demonstrado em saúde — ideal para planos e clínicas.</p></div>
+      <div class="sec-card r"><div class="ico">🏠</div><h4>Imobiliário</h4><p>Consultores com perfil de comprador activo e poder de decisão.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-alt" id="pricing">
+  <div class="w">
+    <div class="sec-badge">Packs disponíveis</div>
+    <h2>Escolha o volume certo para a sua operação.</h2>
+    <div class="packs">
+
+      <div class="pack on r">
+        <div class="pk-badge">Disponível agora</div>
+        <div class="pk-name">Pack Starter</div>
+        <div class="pk-leads">55 leads</div>
+        <div class="pk-sub">Leads qualificadas</div>
+        <div class="pk-divider"></div>
+        <div class="pk-ppl">4 € por lead</div>
+        <div class="pk-total">200 €</div>
+        <div class="pk-total-lbl">Total · IVA incluído</div>
+        <ul class="pk-feats">
+          <li>Leads de seguro de saúde</li>
+          <li>100% contactos portugueses</li>
+          <li>Entrega imediata Excel/CSV</li>
+          <li>Dados verificados</li>
+          <li>Conformidade RGPD</li>
+        </ul>
+        <a href="https://buy.stripe.com/00wdR9bK6arXgf9cfO5Rm00" class="btn-pk buy" target="_blank">Comprar por 200 €</a>
+      </div>
+
+      <div class="pack off r">
+        <div class="pk-badge grey">Esgotado</div>
+        <div class="pk-name">Pack Pro</div>
+        <div class="pk-leads">100 leads</div>
+        <div class="pk-sub">Leads qualificadas</div>
+        <div class="pk-divider"></div>
+        <div class="pk-ppl">5 € por lead</div>
+        <div class="pk-total">500 €</div>
+        <div class="pk-total-lbl">Total · IVA incluído</div>
+        <ul class="pk-feats">
+          <li>Leads de seguro de saúde</li>
+          <li>100% contactos portugueses</li>
+          <li>Entrega imediata Excel/CSV</li>
+          <li>Dados verificados</li>
+          <li>Conformidade RGPD</li>
+          <li>Suporte prioritário</li>
+        </ul>
+        <span class="btn-pk dis">Esgotado</span>
+      </div>
+
+      <div class="pack off r">
+        <div class="pk-badge grey">Brevemente</div>
+        <div class="pk-name">Pack Enterprise</div>
+        <div class="pk-leads">500 leads</div>
+        <div class="pk-sub">Leads qualificadas</div>
+        <div class="pk-divider"></div>
+        <div class="pk-ppl">3,50 € por lead</div>
+        <div class="pk-total">1.750 €</div>
+        <div class="pk-total-lbl">Total · IVA incluído</div>
+        <ul class="pk-feats">
+          <li>Leads de seguro de saúde</li>
+          <li>100% contactos portugueses</li>
+          <li>Entrega imediata Excel/CSV</li>
+          <li>Dados verificados</li>
+          <li>Conformidade RGPD</li>
+          <li>Gestão de conta dedicada</li>
+        </ul>
+        <span class="btn-pk dis">Indisponível de momento</span>
+      </div>
+
+    </div>
+    <p class="pk-note">
+      Pagamento seguro via Stripe. Entrega imediata após confirmação — ficheiro enviado automaticamente para o seu email.<br>
+      Dúvidas? <a href="/cdn-cgi/l/email-protection#533d32303a3c3d323f373625363f3c233e363d272013343e323a3f7d303c3e"><span class="__cf_email__" data-cfemail="1f717e7c7670717e737b7a697a73706f727a716b6c5f78727e7673317c7072">[email&#160;protected]</span></a>
+    </p>
+  </div>
+</div>
+
+<div class="sec" id="faq">
+  <div class="w">
+    <div class="sec-badge">Perguntas frequentes</div>
+    <h2>Tudo o que precisa de saber.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Como são recolhidas as leads? <span class="faq-ic">+</span></button>
+        <div class="faq-a">As leads são geradas exclusivamente através de anúncios no Facebook e Instagram. O utilizador vê o anúncio, clica e preenche um formulário a solicitar proposta de seguro. Cada pessoa deu consentimento explícito para ser contactada.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Em que formato são entregues as leads? <span class="faq-ic">+</span></button>
+        <div class="faq-a">As leads são entregues em ficheiro Excel (.xlsx) ou CSV com os campos: nome, contacto telefónico, email (quando disponível), distrito (quando disponível) e tipo de seguro pretendido.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo demora a entrega? <span class="faq-ic">+</span></button>
+        <div class="faq-a">A entrega é imediata. Assim que o pagamento é confirmado pelo Stripe, o ficheiro com as leads é enviado automaticamente para o seu email.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">As leads cumprem o RGPD? <span class="faq-ic">+</span></button>
+        <div class="faq-a">Sim, em plena conformidade. Todas as leads foram recolhidas com consentimento explícito e documentado. A recolha, armazenamento e transmissão dos dados cumpre integralmente o RGPD.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Que tipos de seguro incluem as leads? <span class="faq-ic">+</span></button>
+        <div class="faq-a">A maioria das leads é de seguro de saúde, mas o ficheiro poderá incluir outros ramos como seguro de vida, automóvel ou habitação, conforme indicado em cada campo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">É possível filtrar por zona geográfica? <span class="faq-ic">+</span></button>
+        <div class="faq-a">Sim, para volumes maiores podemos filtrar por distrito ou região. Contacte-nos em <a href="/cdn-cgi/l/email-protection#c0aea1a3a9afaea1aca4a5b6a5acafb0ada5aeb4b380a7ada1a9aceea3afad"><span class="__cf_email__" data-cfemail="563837353f3938373a323320333a39263b3338222516313b373f3a7835393b">[email&#160;protected]</span></a> antes de efectuar a compra.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="w">
+    <h2>Comece a fechar <em>negócio hoje.</em></h2>
+    <p class="sub">Leads com intenção real de compra, 100% portuguesas, entregues directamente na sua caixa de entrada.</p>
+    <a href="#pricing" class="btn-blue">Ver Packs de Leads</a>
+    <p class="cta-email">Alguma dúvida? <a href="/cdn-cgi/l/email-protection#f19f9092989e9f909d959487949d9e819c949f8582b1969c90989ddf929e9c"><span class="__cf_email__" data-cfemail="234d42404a4c4d424f474655464f4c534e464d575063444e424a4f0d404c4e">[email&#160;protected]</span></a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-w">
+    <div>© 2025 <strong>LeadPoint</strong> · RGPD · <a href="/cdn-cgi/l/email-protection#3b555a585254555a575f5e4d5e57544b565e554f487b5c565a525715585456"><span class="__cf_email__" data-cfemail="d8b6b9bbb1b7b6b9b4bcbdaebdb4b7a8b5bdb6acab98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a></div>
+    <div class="foot-tag">Agência 100% Online · Sem humanos no front end</div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloud
